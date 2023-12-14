@@ -1,5 +1,6 @@
 const express = require('express'),
-  authHelper = require('./routes/auth'),
+  authControl = require('./controller/auth/auth'),
+  uploadControl = require('./controller/upload/upload'),
   authenticateToken = require('./authenticateToken'),
   router = express.Router();
 
@@ -7,17 +8,20 @@ router.get("/", (req, res) => {
   res.send("<h1>Server Is Working Perfectly !!<h1/>");
 });
 
-router.use("/auth", authHelper);  // All the api's regarding auth here we do not require token
+router.use("/auth", authControl);  // All the api's regarding auth here we do not require token
 
 /*
 
-  The apis which you want to 
-  Run without token validation should be here
-  Before router.use(authenticateToken); 
+The apis which you want to 
+Run without token validation should be here
+Before router.use(authenticateToken); 
 
 */
 
 router.use(authenticateToken);  // Here we are validating all the token
+
+router.use("/upload", uploadControl);  // All the api's regarding auth here we do not require token
+
 
 /*
 
