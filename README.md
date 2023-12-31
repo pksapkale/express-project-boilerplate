@@ -1,4 +1,3 @@
-
 # Express Project Boilerplate
 
 Welcome to the Express Project Boilerplate repository! This is a boilerplate of express project with  all the required security and autherization / authentications
@@ -10,7 +9,8 @@ Welcome to the Express Project Boilerplate repository! This is a boilerplate of 
 Before you begin, ensure that you have the following installed on your machine:
 
 1. [Node.js](https://nodejs.org/) - Latest LTS Version
-2. [MySQL](https://www.mysql.com/) - Install MySQL and import the 'db.sql' file into your MySQL database. Find the 'db.sql' file in the root directory of the project.
+2. [MySQL](https://www.mysql.com/) - Latest MySQL.
+3. Create a .env file you can take refrence from
 
 ### Installation
 
@@ -25,7 +25,9 @@ Before you begin, ensure that you have the following installed on your machine:
    ```bash
    npm i
    ```
-3. **Start Server:**
+3. **Import the 'db.sql' file into your MySQL database. Find the 'db.sql' file in the root directory of the project.**
+4. **Create a .env file you can take refrence from env.js file. Find the 'env.js' file in the root directory of the project.**
+5. **Start Server:**
 
    ```bash
    npm start
