@@ -1,6 +1,6 @@
 const express = require('express'),
-  authControl = require('./controller/auth/auth'),
-  uploadControl = require('./controller/upload/upload'),
+  authControl = require('./controller/authController'),
+  uploadControl = require('./controller/uploadController'),
   authenticateToken = require('./authenticateToken'),
   router = express.Router();
 

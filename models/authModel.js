@@ -1,8 +1,8 @@
-const pool = require('../../db/connection'),
+const pool = require('../db/connection'),
     jwt = require('jsonwebtoken'),
     bcrypt = require('bcrypt');
 
-const authHelperService = {
+const authModel = {
 
     /*
    
@@ -188,4 +188,4 @@ const authHelperService = {
 
 }
 
-module.exports = authHelperService;
+module.exports = authModel;
