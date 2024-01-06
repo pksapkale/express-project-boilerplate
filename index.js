@@ -12,15 +12,15 @@ const express = require('express'),
         limit: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes).
         standardHeaders: 'draft-7', // draft-6: `RateLimit-*` headers; draft-7: combined `RateLimit` header
         legacyHeaders: false, // Disable the `X-RateLimit-*` headers.
-    });
+    }),
+    app = express();
 
-app = express();
 app.use(helmet());
 app.use(limiter);
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')))    // Here we are setting static path for folder uploads to view uploaded files
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));    // Here we are setting static path for folder uploads to view uploaded files
 app.use(fileUpload());
 
 // Always use routes in last
@@ -29,4 +29,4 @@ app.use(routes);
 
 app.listen(process.env.PORT, () => {
     console.log(`Example app listening on port ${process.env.PORT}`)
-})
+});
